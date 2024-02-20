@@ -29,7 +29,7 @@ def write_sql(original_row, file):
 
 if __name__ == "__main__":
     inFile = open('Auto_Sales_data.csv')
-    outFile = open('TESTToyCarOrdersAndSales Insert Commands.sql', 'w')
+    outFile = open('ToyCarOrdersAndSales Insert Commands.sql', 'w')
     csvreader = csv.reader(inFile)
     header = next(csvreader)
     rows = []
