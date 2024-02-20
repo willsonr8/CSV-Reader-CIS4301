@@ -7,6 +7,12 @@ def writeSQL(row, file):
                f'{row[10]}, {row[11]}, {row[12]}, {row[13]}, {row[14]}, {row[15]};\n')
     file.write(command)
 
+def writeSQLnew(row, file):
+    command = (f'INSERT INTO ToyCarOrdersAndSales VALUES ({row[0]}, {row[1]}, {row[2]}, {row[3]}, '
+               f'{row[4]}, TO_DATE({row[5]}, \'dd/mm/yyyy\'), {row[6]}, {row[7]}, {row[8]}, {row[9]}, '
+               f'{row[10]}, {row[11]}, {row[12]}, {row[13]}, {row[14]}, {row[15]};\n')
+    file.write(command)
+
 
 if __name__ == "__main__":
     inFile = open('Auto_Sales_data.csv')
@@ -15,6 +21,6 @@ if __name__ == "__main__":
     header = next(csvreader)
     rows = []
     for row in csvreader:
-        writeSQL(row, outFile)
+        writeSQLnew(row, outFile)
     inFile.close()
     outFile.close()
